@@ -11,6 +11,29 @@ public class ExampeMassive {
             if (a[i] > max)
                 max = a[i];
             System.out.println(a[i]);
+                        }
+        }
+    }
+
+    public void run() {
+        while (!stop) {
+            try {
+                switch (tlc) {
+                    case GREEN:
+                        Thread.sleep(100); // зеленый на 10 секунд
+                        break;
+                    case YELLOW:
+                        Thread.sleep(20); // желтый на 2 секунды
+                        break;
+                    case RED:
+                        Thread.sleep(120); // красный на 12 секунд
+                        break;
+
+                }
+            } catch (InterruptedException exc) {
+                System.out.println(exc);
             }
+            changeColor();
+
         }
     }
